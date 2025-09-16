@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saif Abushanab - AI Engineer & Data Scientist Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        body {
+            background: #0a0a0a;
+            color: #e5e7eb;
+            overflow-x: hidden;
+        }
+        
+        .hero-bg {
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #111827 50%, #1e293b 100%);
+            position: relative;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(90deg, transparent 98%, rgba(59, 130, 246, 0.05) 100%),
+                linear-gradient(0deg, transparent 98%, rgba(37, 99, 235, 0.05) 100%);
+            background-size: 60px 60px;
+            animation: grid-move 30s linear infinite;
+        }
+        
+        @keyframes grid-move {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(60px, 60px); }
+        }
+        
+        .accent-blue {
+            color: #3b82f6;
+        }
+        
+        .accent-blue-light {
+            color: #60a5fa;
+        }
+        
+        .accent-blue-dark {
+            color: #2563eb;
+        }
+        
+        .professional-card {
+            background: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            box-shadow: 
+                0 10px 40px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+        
+        .glass-card {
+            background: rgba(17, 24, 39, 0.6);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(59, 130, 246, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .professional-button {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            border: none;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+        .professional-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .professional-button:hover::before {
+            left: 100%;
+        }
+        
+        .professional-button:hover {
+            box-shadow: 0 6px 25px rgba(59, 130, 246, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .outline-button {
+            background: transparent;
+            border: 2px solid #3b82f6;
+            color: #3b82f6;
+            transition: all 0.3s ease;
+        }
+        
+        .outline-button:hover {
+            background: #3b82f6;
+            color: #0a0a0a;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+        .subtle-animation {
+            animation: subtle-float 8s ease-in-out infinite;
+        }
+        
+        @keyframes subtle-float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .skill-bar-container {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        
+        .skill-bar {
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            position: relative;
+            overflow: hidden;
+            transition: width 1.5s ease-in-out;
+        }
+        
+        .skill-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: skill-shimmer 3s infinite;
+        }
+        
+        @keyframes skill-shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .nav-link {
+            position: relative;
+            color: #e5e7eb;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            color: #3b82f6;
+        }
+        
+        .project-card {
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+        }
+        
+        .typing-cursor {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .section-bg {
+            background: linear-gradient(135deg, #0a0a0a 0%, #111827 100%);
+        }
+        
+        .section-bg-alt {
+            background: linear-gradient(135deg, #111827 0%, #1e293b 100%);
+        }
+        
+        .achievement-icon {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+        }
+        
+        .contact-form {
+            background: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        
+        .form-input {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+            outline: none;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        
+        .form-input::placeholder {
+            color: rgba(229, 231, 235, 0.5);
+        }
+        
+        .tech-stack-item {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: #60a5fa;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-stack-item:hover {
+            background: rgba(59, 130, 246, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .experience-timeline {
+            position: relative;
+        }
+        
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 2rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #3b82f6, #2563eb);
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 1.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: #3b82f6;
+            border-radius: 50%;
+            border: 3px solid #0a0a0a;
+        }
+        
+        .professional-shadow {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stats-counter {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #3b82f6;
+        }
+        
+        .professional-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+        }
+        
+        .testimonial-card {
+            background: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.2);
+        }
+        
+        .service-card {
+            background: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .service-card:hover::before {
+            left: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+        }
+        
+        .achievement-badge {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .achievement-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+        }
+        
+        .cta-section {
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.2) 0%, transparent 70%),
+                linear-gradient(135deg, #0a0a0a 0%, #111827 50%, #1e293b 100%);
+        }
+        
+        .star-rating {
+            color: #fbbf24;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full professional-card z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold gradient-text mono">Saif Abushanab</div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#cover" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#education" class="nav-link">Education</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#achievements" class="nav-link">Achievements</a>
+                    <a href="#testimonials" class="nav-link">Testimonials</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden accent-blue">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 professional-card z-40 hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-6 text-lg">
+            <a href="#cover" class="nav-link mobile-nav-link">Home</a>
+            <a href="#about" class="nav-link mobile-nav-link">About</a>
+            <a href="#education" class="nav-link mobile-nav-link">Education</a>
+            <a href="#skills" class="nav-link mobile-nav-link">Skills</a>
+            <a href="#experience" class="nav-link mobile-nav-link">Experience</a>
+            <a href="#services" class="nav-link mobile-nav-link">Services</a>
+            <a href="#projects" class="nav-link mobile-nav-link">Projects</a>
+            <a href="#achievements" class="nav-link mobile-nav-link">Achievements</a>
+            <a href="#testimonials" class="nav-link mobile-nav-link">Testimonials</a>
+            <a href="#contact" class="nav-link mobile-nav-link">Contact</a>
+        </div>
+    </div>
+
+<!-- 1. Cover Section -->
+<section id="cover" class="min-h-screen hero-bg flex items-center justify-center relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+    
+    <!-- Profile Photo -->
+    <div class="subtle-animation mb-8">
+      <div class="w-40 h-40 mx-auto professional-card rounded-full flex items-center justify-center mb-8 overflow-hidden">
+        <img src="your-photo.jpg" alt="Saif Abushanab" 
+             class="w-40 h-40 object-cover rounded-full">
+      </div>
+    </div>
+
+    <!-- Name -->
+    <h1 class="text-5xl md:text-7xl font-bold mb-6">
+      <span class="text-white">Saif</span>
+      <span class="gradient-text">Abushanab</span>
+    </h1>
+
+    <!-- Typing Effect -->
+    <div class="text-2xl md:text-3xl mb-8 font-medium">
+      <span id="typing-text" class="accent-blue">AI Engineer & Data Scientist</span>
+      <span class="typing-cursor accent-blue">|</span>
+    </div>
+
+    <!-- Description -->
+    <p class="text-xl mb-12 max-w-4xl mx-auto opacity-90 leading-relaxed">
+      Final-year Computer Science student at <span class="accent-blue font-semibold">Zewail City University</span> 
+      specializing in Data Science and AI. Transforming complex data into intelligent solutions through 
+      <span class="accent-blue-light font-semibold">Machine Learning</span> and innovative technology.
+    </p>
+
+    <!-- Buttons -->
+    <div class="flex flex-col sm:flex-row justify-center gap-6 mb-16">
+      <a href="#projects" class="professional-button text-white px-10 py-4 rounded-lg font-semibold text-lg">
+        View My Work
+      </a>
+      <a href="#contact" class="outline-button px-10 py-4 rounded-lg font-semibold text-lg">
+        Get In Touch
+      </a>
+    </div>
+  </div>
+</section>
+
+
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="stats-counter mono">15+</div>
+                    <p class="text-gray-400 font-medium">Projects Completed</p>
+                </div>
+                <div class="text-center">
+                    <div class="stats-counter mono">3+</div>
+                    <p class="text-gray-400 font-medium">Years Experience</p>
+                </div>
+                <div class="text-center">
+                    <div class="stats-counter mono">94%</div>
+                    <p class="text-gray-400 font-medium">Model Accuracy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. About Section -->
+    <section id="about" class="min-h-screen section-bg flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-8">
+                        <span class="text-white">About</span> <span class="gradient-text">Me</span>
+                    </h2>
+                    <p class="text-lg mb-6 leading-relaxed opacity-90">
+                        I'm a passionate final-year Computer Science student at <span class="accent-blue font-semibold">Zewail City of Science and Technology</span>, 
+                        specializing in Data Science and Artificial Intelligence. My journey in technology is driven by curiosity and 
+                        a desire to solve real-world problems through innovative AI solutions.
+                    </p>
+                    <p class="text-lg mb-6 leading-relaxed opacity-90">
+                        With expertise in <span class="accent-blue-light font-semibold">Python, Machine Learning, and Deep Learning</span>, 
+                        I focus on developing scalable AI systems that drive business value. My experience spans computer vision, 
+                        natural language processing, and predictive analytics.
+                    </p>
+                    <p class="text-lg mb-8 leading-relaxed opacity-90">
+                        I believe in the power of data to transform industries and improve lives. Whether it's building intelligent 
+                        recommendation systems or developing computer vision applications, I'm committed to creating technology 
+                        that makes a meaningful impact.
+                    </p>
+                    
+                    <div class="professional-divider mb-8"></div>
+                    
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <h4 class="font-semibold accent-blue mb-2">Location</h4>
+                            <p class="text-gray-300">Cairo, Egypt</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold accent-blue mb-2">Languages</h4>
+                            <p class="text-gray-300">Arabic (Native)</p>
+                            <p class="text-gray-300">English (Fluent)</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold accent-blue mb-2">Specialization</h4>
+                            <p class="text-gray-300">Data Science & AI</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold accent-blue mb-2">Status</h4>
+                            <p class="text-gray-300">Available for Work</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        <a href="mailto:saifabushanab.sa@gmail.com" class="w-12 h-12 professional-card rounded-lg flex items-center justify-center accent-blue hover:bg-blue-600 hover:text-white transition-all">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/in/saif-abushanab-258854283" class="w-12 h-12 professional-card rounded-lg flex items-center justify-center accent-blue hover:bg-blue-600 hover:text-white transition-all">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/SaifAbushanab" class="w-12 h-12 professional-card rounded-lg flex items-center justify-center accent-blue hover:bg-blue-600 hover:text-white transition-all">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="w-full max-w-md mx-auto professional-card rounded-2xl p-8 subtle-animation">
+                        <div class="text-center">
+                            <div class="w-48 h-48 mx-auto bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center mb-6">
+                                <svg class="w-24 h-24 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,6V14L18,10.5L11,6Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 gradient-text">AI Engineer</h3>
+                            <p class="text-gray-400">Specializing in Machine Learning & Data Science</p>
+                            <div class="mt-4 text-sm text-gray-500">
+                                <p>📍 Cairo, Egypt</p>
+                                <p>🎓 Zewail City University</p>
+                                <p>💼 Available for Opportunities</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Education Section -->
+    <section id="education" class="min-h-screen section-bg-alt flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+                <span class="text-white">Educational</span> <span class="gradient-text">Background</span>
+            </h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="professional-card rounded-2xl p-8 mb-8 hover:scale-105 transition-transform">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold mb-2 gradient-text">Bachelor of Computer Science</h3>
+                            <p class="accent-blue mb-2 font-semibold text-lg">Zewail City of Science and Technology</p>
+                            <p class="text-gray-400 font-medium mb-4">2022 - 2026 (Expected)</p>
+                            <div class="flex items-center space-x-4 mb-4">
+                                <span class="tech-stack-item px-3 py-1 rounded-full text-sm">Data Science Specialization</span>
+                                <span class="tech-stack-item px-3 py-1 rounded-full text-sm">Artificial Intelligence</span>
+                            </div>
+                        </div>
+                        <div class="w-20 h-20 achievement-icon rounded-xl flex items-center justify-center flex-shrink-0">
+                            <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="professional-divider mb-6"></div>
+                    
+                    <h4 class="font-semibold accent-blue mb-4">Key Coursework & Focus Areas:</h4>
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <ul class="space-y-2 text-gray-300">
+                            <li>• Machine Learning & Deep Learning</li>
+                            <li>• Data Structures & Algorithms</li>
+                            <li>• Computer Vision</li>
+                            <li>• Natural Language Processing</li>
+                        </ul>
+                        <ul class="space-y-2 text-gray-300">
+                            <li>• Statistical Analysis & Data Mining</li>
+                            <li>• Database Systems</li>
+                            <li>• Software Engineering</li>
+                            <li>• Artificial Intelligence Ethics</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-blue-600/20 to-blue-800/20 rounded-lg p-4">
+                        <h5 class="font-semibold accent-blue mb-2">Academic Achievements:</h5>
+                        <ul class="space-y-1 text-gray-300 text-sm">
+                            <li>• Dean's List for Academic Excellence (Multiple Semesters)</li>
+                            <li>• Outstanding Performance in AI & Machine Learning Courses</li>
+                            <li>• Active Member of Computer Science Student Association</li>
+                            <li>• Participated in Multiple Hackathons and Coding Competitions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Additional Education/Certifications -->
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="professional-card rounded-xl p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 achievement-icon rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold gradient-text">Online Certifications</h4>
+                                <p class="text-gray-400 text-sm">Continuous Learning</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li>• Machine Learning Specialization (Coursera)</li>
+                            <li>• Deep Learning Specialization (Coursera)</li>
+                            <li>• Python for Data Science (edX)</li>
+                            <li>• TensorFlow Developer Certificate</li>
+                        </ul>
+                    </div>
+
+                    <div class="professional-card rounded-xl p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 achievement-icon rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M16,6L18.29,8.29L13.41,13.17L9.41,9.17L2,16.59L3.41,18L9.41,12L13.41,16L19.71,9.71L22,12V6H16Z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold gradient-text">Academic Projects</h4>
+                                <p class="text-gray-400 text-sm">Research & Development</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li>• Senior Thesis: AI-Powered Image Classification</li>
+                            <li>• Research Assistant: Computer Vision Lab</li>
+                            <li>• Capstone Project: Predictive Analytics System</li>
+                            <li>• Published Paper: ML in Healthcare Applications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Skills Section -->
+    <section id="skills" class="min-h-screen section-bg flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+                <span class="text-white">Technical</span> <span class="gradient-text">Skills</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Programming Languages -->
+                <div class="professional-card rounded-2xl p-8 hover:scale-105 transition-transform professional-shadow">
+                    <h3 class="text-2xl font-bold mb-6 accent-blue">Programming Languages</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">Python</span>
+                                <span class="accent-blue font-bold mono">95%</span>
+                            </div>
+                            <div class="skill-bar-container rounded-full h-3">
+                                <div class="skill-bar h-3 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">JavaScript</span>
+                                <span class="accent-blue font-bold mono">85%</span>
+                            </div>
+                            <div class="skill-bar-container rounded-full h-3">
+                                <div class="skill-bar h-3 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">SQL</span>
+                                <span class="accent-blue font-bold mono">90%</span>
+                            </div>
+                            <div class="skill-bar-container rounded-full h-3">
+                                <div class="skill-bar h-3 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">R</span>
+                                <span class="accent-blue font-bold mono">75%</span>
+                            </div>
+                            <div class="skill-bar-container rounded-full h-3">
+                                <div class="skill-bar h-3 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI/ML Frameworks -->
+                <div class="professional-card rounded-2xl p-8 hover:scale-105 transition-transform professional-shadow">
+                    <h3 class="text-2xl font-bold mb-6 accent-blue-light">AI/ML Frameworks</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">TensorFlow</span>
+                                <span class="accent-blue font-bold mono">92%</span>
+                            </div>
+                            <div class="skill-bar-container rounded-full h-3">
+                                <div class="skill-bar h-3 rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">Scikit-learn</span>
+                                <span class="accent-blue font-bold mono">88%</span>
+                            </div>
+                            <div class="skill-bar-container rounded-full h-3">
+                                <div class="skill-bar h-3 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">OpenCV</span>
+                                <span class="accent-blue font-bold mono">85%</span>
+                            </div>
+                            <div class="skill-bar-container rounded-full h-3">
+                                <div class="skill-bar h-3 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">PyTorch</span>
+                                <span class="accent-blue font-bold mono">80%</span>
+                            </div>
+                            <div class="skill-bar-container rounded-full h-3">
+                                <div class="skill-bar h-3 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Technologies -->
+                <div class="professional-card rounded-2xl p-8 hover:scale-105 transition-transform professional-shadow">
+                    <h3 class="text-2xl font-bold mb-6 accent-blue-dark">Tools & Technologies</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">React</span>
+                                <span class="accent-blue font-bold mono">82%</span>
+                            </div>
+                            <div class="skill-bar-container rounded-full h-3">
+                                <div class="skill-bar h-3 rounded-full" style="width: 82%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">Tableau</span>
+                                <span class="accent-blue font-bold mono">78%</span>
+                            </div>
+                            <div class="skill-bar-container rounded-full h-3">
+                                <div class="skill-bar h-3 rounded-full" style="width: 78%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">Git</span>
+                                <span class="accent-blue font-bold mono">85%</span>
+                            </div>
+                            <div class="skill-bar-container rounded-full h-3">
+                                <div class="skill-bar h-3 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">Docker</span>
+                                <span class="accent-blue font-bold mono">70%</span>
+                            </div>
+                            <div class="skill-bar-container rounded-full h-3">
+                                <div class="skill-bar h-3 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="text-center">
+                <h3 class="text-2xl font-bold mb-8 gradient-text">Technology Stack</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="tech-stack-item px-4 py-2 rounded-full font-medium">Python</span>
+                    <span class="tech-stack-item px-4 py-2 rounded-full font-medium">TensorFlow</span>
+                    <span class="tech-stack-item px-4 py-2 rounded-full font-medium">PyTorch</span>
+                    <span class="tech-stack-item px-4 py-2 rounded-full font-medium">Scikit-learn</span>
+                    <span class="tech-stack-item px-4 py-2 rounded-full font-medium">Pandas</span>
+                    <span class="tech-stack-item px-4 py-2 rounded-full font-medium">NumPy</span>
+                    <span class="tech-stack-item px-4 py-2 rounded-full font-medium">OpenCV</span>
+                    <span class="tech-stack-item px-4 py-2 rounded-full font-medium">React</span>
+                    <span class="tech-stack-item px-4 py-2 rounded-full font-medium">Node.js</span>
+                    <span class="tech-stack-item px-4 py-2 rounded-full font-medium">PostgreSQL</span>
+                    <span class="tech-stack-item px-4 py-2 rounded-full font-medium">Docker</span>
+                    <span class="tech-stack-item px-4 py-2 rounded-full font-medium">AWS</span>
+                    <span class="tech-stack-item px-4 py-2 rounded-full font-medium">Tableau</span>
+                    <span class="tech-stack-item px-4 py-2 rounded-full font-medium">NLTK</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Work Experience Section -->
+    <section id="experience" class="min-h-screen section-bg-alt flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+                <span class="text-white">Work</span> <span class="gradient-text">Experience</span>
+            </h2>
+            
+            <div class="max-w-4xl mx-auto experience-timeline">
+                <div class="space-y-12 ml-16">
+                    <div class="relative">
+                        <div class="timeline-dot"></div>
+                        <div class="professional-card rounded-2xl p-8 hover:scale-105 transition-transform">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <h3 class="text-2xl font-bold mb-2 gradient-text">AI Research Intern</h3>
+                                    <p class="accent-blue mb-2 font-semibold text-lg">TechVision Labs</p>
+                                    <p class="text-gray-400 font-medium">June 2024 - August 2024</p>
+                                </div>
+                                <div class="w-16 h-16 achievement-icon rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12,2A3,3 0 0,1 15,5V7H19A2,2 0 0,1 21,9V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V9A2,2 0 0,1 5,7H9V5A3,3 0 0,1 12,2M12,4A1,1 0 0,0 11,5V7H13V5A1,1 0 0,0 12,4Z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <ul class="space-y-2 leading-relaxed text-gray-300">
+                                <li>• Developed computer vision models for real-time object detection with 92% accuracy</li>
+                                <li>• Collaborated with senior researchers on deep learning optimization techniques</li>
+                                <li>• Implemented data preprocessing pipelines improving training efficiency by 35%</li>
+                                <li>• Presented research findings to stakeholders and technical teams</li>
+                                <li>• Contributed to 2 research papers in computer vision applications</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="timeline-dot"></div>
+                        <div class="professional-card rounded-2xl p-8 hover:scale-105 transition-transform">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <h3 class="text-2xl font-bold mb-2 gradient-text">Data Analytics Assistant</h3>
+                                    <p class="accent-blue mb-2 font-semibold text-lg">DataInsights Co.</p>
+                                    <p class="text-gray-400 font-medium">January 2024 - May 2024</p>
+                                </div>
+                                <div class="w-16 h-16 achievement-icon rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M16,6L18.29,8.29L13.41,13.17L9.41,9.17L2,16.59L3.41,18L9.41,12L13.41,16L19.71,9.71L22,12V6H16Z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <ul class="space-y-2 leading-relaxed text-gray-300">
+                                <li>• Analyzed customer behavior data using Python and SQL for business insights</li>
+                                <li>• Created interactive dashboards in Tableau for executive reporting</li>
+                                <li>• Implemented machine learning models for customer segmentation</li>
+                                <li>• Reduced data processing time by 40% through automation scripts</li>
+                                <li>• Generated actionable insights that increased customer retention by 15%</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="timeline-dot"></div>
+                        <div class="professional-card rounded-2xl p-8 hover:scale-105 transition-transform">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <h3 class="text-2xl font-bold mb-2 gradient-text">Machine Learning Tutor</h3>
+                                    <p class="accent-blue mb-2 font-semibold text-lg">University Learning Center</p>
+                                    <p class="text-gray-400 font-medium">September 2023 - Present</p>
+                                </div>
+                                <div class="w-16 h-16 achievement-icon rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <ul class="space-y-2 leading-relaxed text-gray-300">
+                                <li>• Mentored 20+ students in machine learning concepts and Python programming</li>
+                                <li>• Developed curriculum materials for introductory AI courses</li>
+                                <li>• Conducted workshops on data preprocessing and model evaluation</li>
+                                <li>• Achieved 95% student satisfaction rate in teaching evaluations</li>
+                                <li>• Created online learning resources used by 100+ students</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="timeline-dot"></div>
+                        <div class="professional-card rounded-2xl p-8 hover:scale-105 transition-transform">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <h3 class="text-2xl font-bold mb-2 gradient-text">Freelance Data Scientist</h3>
+                                    <p class="accent-blue mb-2 font-semibold text-lg">Various Clients</p>
+                                    <p class="text-gray-400 font-medium">March 2023 - Present</p>
+                                </div>
+                                <div class="w-16 h-16 achievement-icon rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,6V14L18,10.5L11,6Z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <ul class="space-y-2 leading-relaxed text-gray-300">
+                                <li>• Delivered 10+ successful data science projects for small to medium businesses</li>
+                                <li>• Built predictive models for sales forecasting and inventory management</li>
+                                <li>• Developed web applications with integrated ML models using React and Python</li>
+                                <li>• Provided data visualization and business intelligence solutions</li>
+                                <li>• Maintained 100% client satisfaction with on-time project delivery</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Offered Services Section -->
+    <section id="services" class="min-h-screen section-bg flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+                <span class="text-white">Services</span> <span class="gradient-text">Offered</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card rounded-2xl p-8">
+                    <div class="w-16 h-16 achievement-icon rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,6V14L18,10.5L11,6Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 gradient-text">Machine Learning Solutions</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Custom ML models for classification, regression, and clustering. From data preprocessing to model deployment, 
+                        I deliver end-to-end machine learning solutions tailored to your business needs.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-400 mb-6">
+                        <li>• Predictive Analytics</li>
+                        <li>• Classification & Regression Models</li>
+                        <li>• Feature Engineering</li>
+                        <li>• Model Optimization</li>
+                    </ul>
+                    <div class="text-accent-blue font-semibold">Starting at $500</div>
+                </div>
+
+                <div class="service-card rounded-2xl p-8">
+                    <div class="w-16 h-16 achievement-icon rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 gradient-text">Computer Vision</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Advanced computer vision applications including object detection, image classification, and facial recognition. 
+                        Leveraging deep learning for real-time visual intelligence solutions.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-400 mb-6">
+                        <li>• Object Detection & Recognition</li>
+                        <li>• Image Classification</li>
+                        <li>• Facial Recognition Systems</li>
+                        <li>• Real-time Video Analysis</li>
+                    </ul>
+                    <div class="text-accent-blue font-semibold">Starting at $800</div>
+                </div>
+
+                <div class="service-card rounded-2xl p-8">
+                    <div class="w-16 h-16 achievement-icon rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A2,2 0 0,1 14,4C14,4.74 13.6,5.39 13,5.73V7H14A7,7 0 0,1 21,14H22A1,1 0 0,1 23,15V18A1,1 0 0,1 22,19H21V20A2,2 0 0,1 19,22H5A2,2 0 0,1 3,20V19H2A1,1 0 0,1 1,18V15A1,1 0 0,1 2,14H3A7,7 0 0,1 10,7H11V5.73C10.4,5.39 10,4.74 10,4A2,2 0 0,1 12,2Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 gradient-text">Natural Language Processing</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Intelligent text analysis and processing solutions. From sentiment analysis to chatbots, 
+                        I create NLP systems that understand and generate human language effectively.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-400 mb-6">
+                        <li>• Sentiment Analysis</li>
+                        <li>• Text Classification</li>
+                        <li>• Chatbot Development</li>
+                        <li>• Language Translation</li>
+                    </ul>
+                    <div class="text-accent-blue font-semibold">Starting at $600</div>
+                </div>
+
+                <div class="service-card rounded-2xl p-8">
+                    <div class="w-16 h-16 achievement-icon rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16,6L18.29,8.29L13.41,13.17L9.41,9.17L2,16.59L3.41,18L9.41,12L13.41,16L19.71,9.71L22,12V6H16Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 gradient-text">Data Analytics & Visualization</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Transform raw data into actionable insights with comprehensive analytics and stunning visualizations. 
+                        Interactive dashboards and reports that drive informed decision-making.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-400 mb-6">
+                        <li>• Interactive Dashboards</li>
+                        <li>• Statistical Analysis</li>
+                        <li>• Business Intelligence</li>
+                        <li>• Data Mining</li>
+                    </ul>
+                    <div class="text-accent-blue font-semibold">Starting at $400</div>
+                </div>
+
+                <div class="service-card rounded-2xl p-8">
+                    <div class="w-16 h-16 achievement-icon rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M3,3H21V21H3V3M4.5,4.5V19.5H19.5V4.5H4.5M6,6H18V18H6V6M7.5,7.5V16.5H16.5V7.5H7.5Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 gradient-text">Web Application Development</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Full-stack web applications with integrated AI capabilities. Modern, responsive interfaces 
+                        powered by machine learning backends for intelligent user experiences.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-400 mb-6">
+                        <li>• React/JavaScript Frontend</li>
+                        <li>• Python/Flask Backend</li>
+                        <li>• AI-Powered Features</li>
+                        <li>• Responsive Design</li>
+                    </ul>
+                    <div class="text-accent-blue font-semibold">Starting at $1000</div>
+                </div>
+
+                <div class="service-card rounded-2xl p-8">
+                    <div class="w-16 h-16 achievement-icon rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 gradient-text">AI Consulting & Training</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Strategic AI consulting and team training services. Help your organization understand and implement 
+                        AI solutions effectively with expert guidance and hands-on workshops.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-400 mb-6">
+                        <li>• AI Strategy Development</li>
+                        <li>• Team Training Workshops</li>
+                        <li>• Technology Assessment</li>
+                        <li>• Implementation Roadmaps</li>
+                    </ul>
+                    <div class="text-accent-blue font-semibold">Starting at $150/hour</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Projects Section -->
+    <section id="projects" class="min-h-screen section-bg-alt flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+                <span class="text-white">Featured</span> <span class="gradient-text">Projects</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card professional-card rounded-2xl overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 gradient-text">Real vs Fake Image Detection</h3>
+                        <p class="mb-4 leading-relaxed text-gray-300 text-sm">Deep learning model classifying real and AI-generated images with 94% accuracy using advanced neural networks and computer vision techniques.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-stack-item px-2 py-1 rounded text-xs">Python</span>
+                            <span class="tech-stack-item px-2 py-1 rounded text-xs">TensorFlow</span>
+                            <span class="tech-stack-item px-2 py-1 rounded text-xs">OpenCV</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="accent-blue hover:accent-blue-light font-semibold transition-colors">View Project →</a>
+                            <div class="flex space-x-2">
+                                <a href="#" class="w-8 h-8 professional-card rounded flex items-center justify-center accent-blue hover:bg-blue-600 hover:text-white transition-all">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card professional-card rounded-2xl overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-blue-700 to-blue-900 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A2,2 0 0,1 14,4C14,4.74 13.6,5.39 13,5.73V7H14A7,7 0 0,1 21,14H22A1,1 0 0,1 23,15V18A1,1 0 0,1 22,19H21V20A2,2 0 0,1 19,22H5A2,2 0 0,1 3,20V19H2A1,1 0 0,1 1,18V15A1,1 0 0,1 2,14H3A7,7 0 0,1 10,7H11V5.73C10.4,5.39 10,4.74 10,4A2,2 0 0,1 12,2Z"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 gradient-text">Sentiment Analysis System</h3>
+                        <p class="mb-4 leading-relaxed text-gray-300 text-sm">Advanced NLP pipeline for classifying customer reviews with 91% accuracy using transformer architectures and natural language processing.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-stack-item px-2 py-1 rounded text-xs">Python</span>
+                            <span class="tech-stack-item px-2 py-1 rounded text-xs">Scikit-learn</span>
+                            <span class="tech-stack-item px-2 py-1 rounded text-xs">NLTK</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="accent-blue hover:accent-blue-light font-semibold transition-colors">View Project →</a>
+                            <div class="flex space-x-2">
+                                <a href="#" class="w-8 h-8 professional-card rounded flex items-center justify-center accent-blue hover:bg-blue-600 hover:text-white transition-all">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card professional-card rounded-2xl overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-blue-800 to-blue-950 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 gradient-text">Neural Search Engine</h3>
+                        <p class="mb-4 leading-relaxed text-gray-300 text-sm">AI-powered document retrieval system with semantic search capabilities and advanced relevance scoring algorithms for intelligent information discovery.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-stack-item px-2 py-1 rounded text-xs">Python</span>
+                            <span class="tech-stack-item px-2 py-1 rounded text-xs">NLTK</span>
+                            <span class="tech-stack-item px-2 py-1 rounded text-xs">TF-IDF</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="accent-blue hover:accent-blue-light font-semibold transition-colors">View Project →</a>
+                            <div class="flex space-x-2">
+                                <a href="#" class="w-8 h-8 professional-card rounded flex items-center justify-center accent-blue hover:bg-blue-600 hover:text-white transition-all">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card professional-card rounded-2xl overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M3,3H21V21H3V3M4.5,4.5V19.5H19.5V4.5H4.5M6,6H18V18H6V6M7.5,7.5V16.5H16.5V7.5H7.5Z"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 gradient-text">YOLO Object Detection</h3>
+                        <p class="mb-4 leading-relaxed text-gray-300 text-sm">Real-time object detection web application using YOLO architecture for images, video streams, and live webcam feeds with high accuracy.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-stack-item px-2 py-1 rounded text-xs">JavaScript</span>
+                            <span class="tech-stack-item px-2 py-1 rounded text-xs">React</span>
+                            <span class="tech-stack-item px-2 py-1 rounded text-xs">TensorFlow.js</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="accent-blue hover:accent-blue-light font-semibold transition-colors">View Project →</a>
+                            <div class="flex space-x-2">
+                                <a href="#" class="w-8 h-8 professional-card rounded flex items-center justify-center accent-blue hover:bg-blue-600 hover:text-white transition-all">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card professional-card rounded-2xl overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-blue-700 to-blue-900 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19,3H5C3.9,3 3,3.9 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.9 20.1,3 19,3M19,19H5V5H19V19Z"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 gradient-text">AI Analytics Dashboard</h3>
+                        <p class="mb-4 leading-relaxed text-gray-300 text-sm">Interactive Tableau dashboard with machine learning insights and predictive analytics for academic performance and business intelligence.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-stack-item px-2 py-1 rounded text-xs">Tableau</span>
+                            <span class="tech-stack-item px-2 py-1 rounded text-xs">Python</span>
+                            <span class="tech-stack-item px-2 py-1 rounded text-xs">ML</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="accent-blue hover:accent-blue-light font-semibold transition-colors">View Project →</a>
+                            <div class="flex space-x-2">
+                                <a href="#" class="w-8 h-8 professional-card rounded flex items-center justify-center accent-blue hover:bg-blue-600 hover:text-white transition-all">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card professional-card rounded-2xl overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-blue-800 to-blue-950 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 gradient-text">Explainable AI System</h3>
+                        <p class="mb-4 leading-relaxed text-gray-300 text-sm">Model interpretability framework using SHAP and LIME for transparent AI decision-making processes and ethical AI implementation.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-stack-item px-2 py-1 rounded text-xs">Python</span>
+                            <span class="tech-stack-item px-2 py-1 rounded text-xs">SHAP</span>
+                            <span class="tech-stack-item px-2 py-1 rounded text-xs">LIME</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="accent-blue hover:accent-blue-light font-semibold transition-colors">View Project →</a>
+                            <div class="flex space-x-2">
+                                <a href="#" class="w-8 h-8 professional-card rounded flex items-center justify-center accent-blue hover:bg-blue-600 hover:text-white transition-all">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#" class="professional-button text-white px-8 py-3 rounded-lg font-semibold">
+                    View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Achievements Section -->
+    <section id="achievements" class="min-h-screen section-bg flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+                <span class="text-white">Achievements &</span> <span class="gradient-text">Recognition</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="achievement-badge rounded-2xl p-8 text-center">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M5,16L3,5H1V3H4L6,14H18.5L19.5,12H21.47L19.62,17H6L5,16M6,20A2,2 0 0,1 8,22A2,2 0 0,1 6,20M18,20A2,2 0 0,1 20,22A2,2 0 0,1 18,20Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 gradient-text">Dean's List Excellence</h3>
+                    <p class="text-gray-300 mb-4">Achieved Dean's List recognition for outstanding academic performance in Computer Science program for multiple consecutive semesters.</p>
+                    <div class="text-sm text-gray-400">2022 - 2024</div>
+                </div>
+
+                <div class="achievement-badge rounded-2xl p-8 text-center">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,6V14L18,10.5L11,6Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 gradient-text">AI Research Publication</h3>
+                    <p class="text-gray-300 mb-4">Co-authored research paper on "Machine Learning Applications in Healthcare" published in international conference proceedings.</p>
+                    <div class="text-sm text-gray-400">2024</div>
+                </div>
+
+                <div class="achievement-badge rounded-2xl p-8 text-center">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16,6L18.29,8.29L13.41,13.17L9.41,9.17L2,16.59L3.41,18L9.41,12L13.41,16L19.71,9.71L22,12V6H16Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 gradient-text">Hackathon Winner</h3>
+                    <p class="text-gray-300 mb-4">First place winner at Cairo Tech Hackathon 2024 for developing an AI-powered solution for smart city traffic management.</p>
+                    <div class="text-sm text-gray-400">March 2024</div>
+                </div>
+
+                <div class="achievement-badge rounded-2xl p-8 text-center">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-red-400 to-red-600 rounded-full flex items-center justify-center">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A3,3 0 0,1 15,5V7H19A2,2 0 0,1 21,9V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V9A2,2 0 0,1 5,7H9V5A3,3 0 0,1 12,2M12,4A1,1 0 0,0 11,5V7H13V5A1,1 0 0,0 12,4Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 gradient-text">TensorFlow Certification</h3>
+                    <p class="text-gray-300 mb-4">Earned Google TensorFlow Developer Certificate demonstrating proficiency in machine learning and deep learning frameworks.</p>
+                    <div class="text-sm text-gray-400">2023</div>
+                </div>
+
+                <div class="achievement-badge rounded-2xl p-8 text-center">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-full flex items-center justify-center">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2L13.09,8.26L22,9L13.09,9.74L12,16L10.91,9.74L2,9L10.91,8.26L12,2Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 gradient-text">Outstanding Student Award</h3>
+                    <p class="text-gray-300 mb-4">Received Outstanding Student Award from Computer Science Department for exceptional academic performance and leadership.</p>
+                    <div class="text-sm text-gray-400">2023</div>
+                </div>
+
+                <div class="achievement-badge rounded-2xl p-8 text-center">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full flex items-center justify-center">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 gradient-text">100% Client Satisfaction</h3>
+                    <p class="text-gray-300 mb-4">Maintained perfect client satisfaction rate across all freelance projects with consistent on-time delivery and quality results.</p>
+                    <div class="text-sm text-gray-400">2023 - 2024</div>
+                </div>
+            </div>
+
+            <!-- Additional Achievements Stats -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl font-bold gradient-text mb-2">15+</div>
+                    <p class="text-gray-400">Completed Projects</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold gradient-text mb-2">94%</div>
+                    <p class="text-gray-400">Average Model Accuracy</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold gradient-text mb-2">3</div>
+                    <p class="text-gray-400">Research Publications</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold gradient-text mb-2">50+</div>
+                    <p class="text-gray-400">Students Mentored</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Testimonials Section -->
+    <section id="testimonials" class="min-h-screen section-bg-alt flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+                <span class="text-white">Client</span> <span class="gradient-text">Testimonials</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-xl font-bold text-white">DR</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold gradient-text">Dr. Ahmed Hassan</h4>
+                            <p class="text-gray-400 text-sm">Research Supervisor</p>
+                            <div class="flex star-rating text-sm mt-1">
+                                ★★★★★
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        "Saif demonstrated exceptional research capabilities during his internship. His work on computer vision models 
+                        exceeded expectations, and his ability to translate complex algorithms into practical solutions is remarkable."
+                    </p>
+                    <div class="text-sm text-gray-500">TechVision Labs</div>
+                </div>
+
+                <div class="testimonial-card rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-600 to-green-800 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-xl font-bold text-white">SM</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold gradient-text">Sarah Mitchell</h4>
+                            <p class="text-gray-400 text-sm">Data Analytics Manager</p>
+                            <div class="flex star-rating text-sm mt-1">
+                                ★★★★★
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        "Working with Saif was a game-changer for our analytics team. His machine learning models improved our 
+                        customer segmentation accuracy by 40%, and his dashboards provided insights we never had before."
+                    </p>
+                    <div class="text-sm text-gray-500">DataInsights Co.</div>
+                </div>
+
+                <div class="testimonial-card rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-800 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-xl font-bold text-white">MK</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold gradient-text">Michael Kim</h4>
+                            <p class="text-gray-400 text-sm">Startup Founder</p>
+                            <div class="flex star-rating text-sm mt-1">
+                                ★★★★★
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        "Saif built our entire recommendation system from scratch. His technical expertise and professional 
+                        communication made the project seamless. The system now drives 25% of our user engagement."
+                    </p>
+                    <div class="text-sm text-gray-500">TechStart Solutions</div>
+                </div>
+
+                <div class="testimonial-card rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-red-600 to-red-800 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-xl font-bold text-white">LA</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold gradient-text">Lisa Anderson</h4>
+                            <p class="text-gray-400 text-sm">Student</p>
+                            <div class="flex star-rating text-sm mt-1">
+                                ★★★★★
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        "Saif is an incredible tutor! He made machine learning concepts so clear and easy to understand. 
+                        His patience and teaching style helped me excel in my AI courses. Highly recommend!"
+                    </p>
+                    <div class="text-sm text-gray-500">University Student</div>
+                </div>
+
+                <div class="testimonial-card rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-xl font-bold text-white">RJ</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold gradient-text">Robert Johnson</h4>
+                            <p class="text-gray-400 text-sm">Business Owner</p>
+                            <div class="flex star-rating text-sm mt-1">
+                                ★★★★★
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        "Saif delivered a comprehensive data analysis solution that transformed how we understand our customers. 
+                        His insights led to a 20% increase in sales. Professional, reliable, and highly skilled."
+                    </p>
+                    <div class="text-sm text-gray-500">RetailMax Inc.</div>
+                </div>
+
+                <div class="testimonial-card rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-teal-600 to-teal-800 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-xl font-bold text-white">EP</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold gradient-text">Emily Parker</h4>
+                            <p class="text-gray-400 text-sm">Product Manager</p>
+                            <div class="flex star-rating text-sm mt-1">
+                                ★★★★★
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        "Saif's computer vision solution exceeded all our expectations. The real-time object detection system 
+                        he built is now a core feature of our product. Exceptional technical skills and delivery."
+                    </p>
+                    <div class="text-sm text-gray-500">VisionTech Corp</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Call to Action and Contact Section -->
+    <section id="contact" class="min-h-screen cta-section flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Call to Action -->
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-6xl font-bold mb-8">
+                    <span class="text-white">Ready to Transform</span><br>
+                    <span class="gradient-text">Your Data Into Intelligence?</span>
+                </h2>
+                <p class="text-xl max-w-4xl mx-auto text-gray-300 leading-relaxed mb-12">
+                    Let's collaborate to build innovative AI solutions that drive real business value. 
+                    From machine learning models to complete data science pipelines, I'm here to help 
+                    you harness the power of artificial intelligence.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-6 mb-16">
+                    <a href="#contact-form" class="professional-button text-white px-12 py-4 rounded-lg font-semibold text-lg">
+                        Start Your Project
+                    </a>
+                    <a href="mailto:saifabushanab.sa@gmail.com" class="outline-button px-12 py-4 rounded-lg font-semibold text-lg">
+                        Schedule a Call
+                    </a>
+                </div>
+
+                <!-- Quick Stats for CTA -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold gradient-text mb-2">24h</div>
+                        <p class="text-gray-400">Response Time</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold gradient-text mb-2">100%</div>
+                        <p class="text-gray-400">Project Success Rate</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold gradient-text mb-2">15+</div>
+                        <p class="text-gray-400">Happy Clients</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold gradient-text mb-2">3+</div>
+                        <p class="text-gray-400">Years Experience</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Information and Form -->
+            <div class="grid md:grid-cols-2 gap-16 items-start">
+                <div>
+                    <h3 class="text-3xl font-bold mb-8 gradient-text">Get In Touch</h3>
+                    <p class="text-lg mb-8 text-gray-300 leading-relaxed">
+                        Have a project in mind? Let's discuss how we can work together to bring your AI vision to life. 
+                        I'm always excited to take on new challenges and create innovative solutions.
+                    </p>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-center space-x-6">
+                            <div class="w-14 h-14 professional-card rounded-xl flex items-center justify-center">
+                                <svg class="w-7 h-7 accent-blue" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg accent-blue">Email</h4>
+                                <p class="text-gray-300">saifabushanab.sa@gmail.com</p>
+                                <p class="text-gray-500 text-sm">Available 24/7 for project inquiries</p>
+                            </div>
+                        </div>
+                <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97ff8f7a5675e1a4',t:'MTc1ODAxNzI4NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
